@@ -1,0 +1,166 @@
+body,h3,p{
+  margin: 0;
+  padding: 0;
+}
+/* 最外层容器样式*/
+.photo_wall {
+  width: 100%;
+  height: 650px;
+  background: url(../img/bg.jpg) no-repeat center center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+/*照片容器样式*/
+.photo{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: 800ms;
+}
+/*每一张照片样式*/
+.photo .photo_i,.photo .photo_3d,.photo .photo_side {
+  width: 336px;
+  height: 396px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.photo .photo_i {
+  transition: 800ms;
+  perspective: 750px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%) scale(.5) rotate(0deg);
+}
+.photo .photo_3d{
+  transform-style: preserve-3d;
+  transition: 500ms;
+  transform-origin: 0 50%;
+}
+.photo .photo_side {
+  background: #fff;
+  border-radius: 6px;
+  padding: 26px 24px;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+}
+/*照片正面样式*/
+.photo .photo_front{
+  transform: rotate(0deg);
+}
+.photo .photo_front p{
+  width: 286px;
+  height: 286px;
+  border: 2px solid #d8536d;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.photo .photo_front p img{
+  height: 100%;
+}
+.photo .photo_front h3{
+  width: 166px;
+  height: 44px;
+  font: 16px/44px Arial;
+  color: #fff;
+  margin: 0 auto;
+  background: #d8356d;
+  border-radius: 0 0 5px 5px;
+  text-align: center;
+}
+/*照片反面样式*/
+.photo .photo_back{
+  transform: rotateY(180deg);
+}
+.photo .photo_back p{
+  color: #d8356d;;
+  font: 14px/22px Arial;
+}
+/*照片正面对应的class*/
+.photo .front .photo_3d{
+  transform: rotateY(0deg) translateX();
+}
+/*照片反面对应的class*/
+.photo .back .photo_3d{
+  transform: translateX(100%) rotateY(-180deg);
+}
+/* 让照片居中的样式*/
+.photo .center{
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%) scale(1) rotate(0deg);
+  z-index: 9999;
+}
+
+/*导航区域样式*/
+.nav{
+  width: 100%;
+  height: 190px;
+  padding-top: 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index:8888;
+  background: -webkit-linear-gradient(top,rgba(0,0,0,
+    0.5),transparent);
+    text-align: center;
+}
+@font-face {
+  font-family: "maiduo";
+  src: url(../font/iconfont.woff) format('woff');
+}
+.nav .nav_i{
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transform: scale(.5);
+  font-family: "maiduo";
+  line-height: 30px;
+  color: rgba(255, 255, 255, 0);
+  text-align: center;
+  transition: 500ms;
+}
+
+.nav .active{
+  color: rgba(255, 255, 255, 1);
+  transform: scale(.9) rotateY(0deg);
+}
+.nav .back{
+  transform: scale(.8) rotateY(-180deg);
+}
+.photo_wall .shade{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.photo_wall .hide{
+  transition: 800ms;
+  transform: scale(0) rotateY(360deg);
+  opacity: 0;
+}
+.photo_wall .shade .start{
+  width: 200px;
+  height: 50px;
+  border: 2px solid #d8356d;
+  border-radius: 10px;
+  background: rgba(255, 190, 255, 0.3);
+  text-align: center;
+  font: 22px/50px Arial;
+  cursor: pointer;
+}
