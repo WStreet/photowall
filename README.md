@@ -2,7 +2,7 @@
 
 >采用HTML+CSS(transform)+原生JS完成。
 
-Demo:[点我查看](http://www.maiduo.ren/photowall/)
+Demo:[点我查看](https://wstreet.github.io/photowall/)
 
 效果图：
 
