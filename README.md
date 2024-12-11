@@ -2,10 +2,5 @@
 
 >采用HTML+CSS(transform)+原生JS完成。
 
-Demo:[点我查看](https://wstreet.github.io/photowall/)
+Demo:[点我查看](https://wst7.github.io/photowall/)
 
-效果图：
-
-![](http://oiqshtf3v.bkt.clouddn.com/2017-08-04-19-23-07.png)
-
-![](http://oiqshtf3v.bkt.clouddn.com/2017-08-04-9-23-40.png)
